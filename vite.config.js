@@ -4,7 +4,7 @@ import vue from "@vitejs/plugin-vue";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: "/brand-buzz-website/",
+  base: "/brand-buzz/",
   build: {
     outDir: "build",
     minify: "esbuild",

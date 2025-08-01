@@ -30,7 +30,7 @@
                 :style="{ backgroundColor: service.color }"
               >
                 <img
-                  :src="`/brand-buzz-website/icons/${service.icon}.png`"
+                  :src="`${getBaseUrl()}icons/${service.icon}.png`"
                   ref="icon"
                   alt="icon"
                 />
@@ -54,6 +54,7 @@
 </template>
 
 <script>
+import.meta.env.BASE_URL;
 import { isInViewport } from "../utils/viewport";
 import { splitNode } from "../utils/splitnode";
 import { gsap } from "gsap";
@@ -185,6 +186,9 @@ export default {
           );
         }
       });
+    },
+    getBaseUrl() {
+      return import.meta.env.BASE_URL;
     },
   },
   computed: {

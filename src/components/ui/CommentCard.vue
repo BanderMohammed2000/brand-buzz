@@ -3,7 +3,7 @@
     <div class="card-body">
       <div class="d-flex align-items-center pt-2">
         <img
-          :src="`/brand-buzz-website/${data.image}`"
+          :src="`${getBaseUrl()}${data.image}`"
           :alt="data.name"
           loading="lazy"
         />
@@ -35,8 +35,14 @@
   </div>
 </template>
 <script>
+import.meta.env.BASE_URL;
 export default {
   props: ["data"],
+  methods: {
+    getBaseUrl() {
+      return import.meta.env.BASE_URL;
+    },
+  },
 };
 </script>
 
